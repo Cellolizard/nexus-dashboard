@@ -111,7 +111,7 @@ Docker is the supported production path. Linux and Windows sections are source i
 
 ## Run with Docker
 
-The image is `ghcr.io/cellolizard/nexus-dashboard:latest`. On start, the entrypoint runs `flask db upgrade`, then Gunicorn.
+The image is `ghcr.io/cellolizard/nexus-dashboard:latest`, published from `main` as `linux/amd64`. On start, the entrypoint runs `flask db upgrade`, then Gunicorn.
 
 ```bash
 docker run -d \
