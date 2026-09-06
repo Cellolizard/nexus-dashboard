@@ -2,6 +2,8 @@
 
 This is a maintained fork of [DarkflameUniverse/NexusDashboard](https://github.com/DarkflameUniverse/NexusDashboard), split off for UI modernization, reliability, cleanup, and operator QoL. Upstream is still the original project; this repo is the working tree for that pass.
 
+Compared to upstream: missing CDClient/locale data no longer 500s pages, status icons are consistent across lists, moderation has Approve All / optional auto-approval / a pending queue on the home dashboard, and the Docker image includes the native build deps it actually needs.
+
 <p align="center">
   <img src="app/static/logo/logo.png" alt="DLU logo"/>
 </p>
@@ -32,18 +34,24 @@ This is a maintained fork of [DarkflameUniverse/NexusDashboard](https://github.c
   * Moderation:
     * Character Names:
       * Approve and mark as needs rename
+      * Approve All pending names
     * Pet Names:
       * Auto-moderation of Pet names based on already moderated names
         * This is a scheduled tack that runs in the background every hour
       * Character Association, to see who has requested what name
       * Name cleanup: remove names of deleted pets/characters
+      * Approve All pending pet names
     * Properties:
       * Approve and Un-approve Properties
+      * Approve All pending properties
       * Property/Model viewer
         * Pre-built and UGC model rendering
         * View Properties in full 360 in the browser!
         * View in LOD0 (High), LOD1(Medium), or LOD2(Low) quality
         * Download models
+    * Approve All pending items at once
+    * Optional auto-approval (interval stored in dashboard settings)
+    * Pending counts and a short queue on the home dashboard (GM 3+)
   * Bug Reports:
     * View and Resolve bug reports
   * Logs:
@@ -90,7 +98,7 @@ docker run -d \
     -v /path/to/logs:/logs:rw /
     -v /path/to/unpacked/client:/app/luclient:ro \
     -v /path/to/cachedir:/app/cache:rw \
-    ghcr.io/darkflameuniverse/nexusdashboard:latest
+    ghcr.io/cellolizard/nexus-dashboard:latest
 ```
 
  * `/app/luclient` must be mapped to the location of an unpacked client
@@ -125,7 +133,7 @@ Next you will want to clone the repository. You can clone it anywhere, but for t
 <br></br>
 
 Run `cd ~` to ensure that you are currently in the home directory then run the following command to clone the repository into our home directory
-`git clone https://github.com/DarkflameUniverse/NexusDashboard.git`
+`git clone https://github.com/Cellolizard/nexus-dashboard.git NexusDashboard`
 
 You should now have a directory called `NexusDashboard` present in your home directory
 
@@ -247,7 +255,7 @@ Next you will need to clone the repository. You can clone it anywhere, but for t
 
 Open a command prompt and run `cd Desktop` (The command line should place you in your Home directory be default) to ensure that you are currently in the desktop directory then run the following command to clone the repository into our desktop directory
 
-Run the following command to clone the repository `git clone https://github.com/DarkflameUniverse/NexusDashboard.git`
+Run the following command to clone the repository `git clone https://github.com/Cellolizard/nexus-dashboard.git NexusDashboard`
 
 You should now have a directory called `NexusDashboard` present on your desktop.
 
