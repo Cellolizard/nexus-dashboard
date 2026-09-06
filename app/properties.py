@@ -266,10 +266,15 @@ def get(status="all"):
         property_data["8"] = time.ctime(property_data["8"])
         property_data["9"] = time.ctime(property_data["9"])
 
-        if not property_data["7"]:
+        if property_data["7"]:
+            # Approved
+            property_data["7"] = '''<h2 class="far fa-check-square text-success"></h2>'''
+        elif property_data["10"]:
+            # Rejected (has reason)
             property_data["7"] = '''<h2 class="far fa-times-circle text-danger"></h2>'''
         else:
-            property_data["7"] = '''<h2 class="far fa-check-square text-success"></h2>'''
+            # Pending/Unapproved
+            property_data["7"] = '''<h2 class="far fa-times-circle text-muted"></h2>'''
 
         zone_desc_query = query_cdclient(
             'select DisplayDescription from ZoneTable where zoneID = ?',
