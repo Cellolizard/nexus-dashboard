@@ -1,5 +1,7 @@
 # Nexus Dashboard
 
+This is a maintained fork of [DarkflameUniverse/NexusDashboard](https://github.com/DarkflameUniverse/NexusDashboard), split off for UI modernization, reliability, cleanup, and operator QoL. Upstream is still the original project; this repo is the working tree for that pass.
+
 <p align="center">
   <img src="app/static/logo/logo.png" alt="DLU logo"/>
 </p>
