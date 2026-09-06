@@ -2,9 +2,13 @@
 
 FROM python:3.11-slim-bookworm
 
-RUN apt update
-RUN apt -y install zip
-RUN apt -y install imagemagick
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    g++ \
+    libmagickwand-dev \
+    imagemagick \
+    zip \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
 
