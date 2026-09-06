@@ -1,12 +1,12 @@
+<p align="center">
+  <img src="app/static/logo/logo.png" alt="Darkflame Universe logo"/>
+</p>
+
 # Nexus Dashboard
 
 Nexus Dashboard is a Flask app for operating a [Darkflame Universe](https://github.com/DarkflameUniverse/DarkflameServer) (DLU) game server: accounts, play keys, characters, moderation, mail, logs, and economy reports.
 
 This repository is a maintained fork of [DarkflameUniverse/NexusDashboard](https://github.com/DarkflameUniverse/NexusDashboard). Upstream remains the original project. This tree is for UI modernization, reliability, cleanup, and operator QoL.
-
-<p align="center">
-  <img src="app/static/logo/logo.png" alt="Darkflame Universe logo"/>
-</p>
 
 ## Contents
 
